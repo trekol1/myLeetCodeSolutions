@@ -15,7 +15,7 @@
  * @param {number} target
  * @return {number[]}
  */
- var twoSum = function(nums, target) {
+ var twoSumBruteForce = function(nums, target) {
     for (let i=0; i<nums.length-1; i++) {
         for (let j=i+1; j<nums.length; j++) {
             if (nums[i]+nums[j] == target) {
@@ -25,3 +25,15 @@
         }
     }    
 };
+
+var twoSumUsingMap = function(nums, target) {
+    let map = {};
+    for (let i = 0; i<nums.length; i++) {
+        let n = nums[i];
+        if (map[target-n]>=0){
+            return [map[target-n],i]
+        } else {
+            map[n] = i;
+        }
+    }
+}

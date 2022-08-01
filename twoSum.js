@@ -15,6 +15,9 @@
  * @param {number} target
  * @return {number[]}
  */
+
+// this is brute force implementation, checking all the pairs in the array
+
  var twoSumBruteForce = function(nums, target) {
     for (let i=0; i<nums.length-1; i++) {
         for (let j=i+1; j<nums.length; j++) {
@@ -25,6 +28,8 @@
         }
     }    
 };
+
+// this is optimized implementation using Map
 
 var twoSumUsingMap = function(nums, target) {
     let map = {};
